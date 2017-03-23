@@ -74,10 +74,6 @@ export default Ember.Mixin.create({
       this.setMinDate();
       this.setMaxDate();
       this.setPikadayDate();
-
-      if (this.get('options')) {
-        this._updateOptions();
-      }
     });
   },
 
@@ -194,9 +190,5 @@ export default Ember.Mixin.create({
     if (this.get('disabled') && this.get('pikaday')) {
       this.get('pikaday').hide();
     }
-  },
-
-  _updateOptions() {
-    this.get('pikaday').config(this.get('_options'));
   }
 });
